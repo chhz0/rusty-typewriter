@@ -1,0 +1,10 @@
+{{ $file := .Get 0 }}
+{{ $path := path.Join .Page.File.Dir $file }}
+{{ if fileExists $path }}
+  {{ $content := readFile $path}}
+  {{ $content = replaceRE "^---[\\s\\S]+?---" "" $content }}
+  {{ $rendered := $content | .Page.RenderString }}
+  {{ $rendered | safeHTML}}
+{{ else }}
+  {{ errorf "Include file %s not found." $path }}
+{{ end }}
