@@ -8,7 +8,7 @@
       <div class="list-group-heading">
         <a href="{{- .RelPermalink -}}">{{- partial "title.html" . -}}</a>
         <time style="float: right;" datetime="2023-05-02T00:00:00Z">
-          {{- dateFormat (or .Site.Params.dateFormat "Jan 2") .Date -}}
+          {{- dateFormat (or .Site.Params.dateFormat "01-02") .Date -}}
         </time>
       </div>
       <div class="list-group-summary content-font">{{- partial "components/summary.html" . -}}</div>

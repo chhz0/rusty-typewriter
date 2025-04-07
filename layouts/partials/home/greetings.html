@@ -5,7 +5,7 @@
     {{- end -}}
 
     <h1 class="greetings-title">{{- site.Data.rtwt.content.home.greetings -}}</h1>
-    <div class="greetings-text">{{- site.Data.rtwt.content.home.text -}}
+    <div class="greetings-text">{{- site.Data.rtwt.content.home.text | markdownify | safeHTML -}}
     </div>
   </div>
 {{- end -}}

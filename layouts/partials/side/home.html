@@ -12,7 +12,7 @@
         <img class="side-content-image" src="{{- .imagePath -}}" width="{{- default "80%" .imageWidth -}}" />
       {{- end -}}
     {{- end -}}
-    <p>{{- .content -}}</p>
+    <p>{{- .content | markdownify -}}</p>
   </div>
 {{- end -}}
 

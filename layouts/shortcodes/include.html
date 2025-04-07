@@ -4,7 +4,7 @@
   {{ $content := readFile $path}}
   {{ $content = replaceRE "^---[\\s\\S]+?---" "" $content }}
   {{ $rendered := $content | .Page.RenderString }}
-  {{ $rendered | safeHTML}}
+  {{ $rendered | safeHTML }}
 {{ else }}
   {{ errorf "Include file %s not found." $path }}
 {{ end }}
