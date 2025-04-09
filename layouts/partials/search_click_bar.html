@@ -1,0 +1,22 @@
+<div class="search-click-bar" onclick="openSearchDrawer()">
+  {{- partial "svg/search.svg" -}}
+  {{/*  <input id="searchInput" type="text" placeholder="{{- i18n "search_placeholder" -}}" autocomplete="off"/>  */}}
+  <span class="search-placeholder"> {{- i18n "search_placeholder" -}} </span>
+  <span class="shortcut-hint">Ctrl+K</span>
+  <span style="color: #7b7d7d;">/</span>
+</div>
+
+<script>
+  function openSearchDrawer() {
+    const drawer = document.getElementById('search-drawer');
+    const overlay = document.getElementById('search-drawer-overlay');
+
+    drawer.classList.remove('hidden');
+    overlay.classList.add('visible')
+
+    setTimeout(() => {
+      drawer.classList.add('open');
+      document.querySelector('.search-text').focus();
+    }, 10)
+  }
+</script>

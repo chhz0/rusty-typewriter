@@ -10,6 +10,8 @@
   --quote-text-color: #888;
   --code-background-color: #333030;
   --code-text-color: #f0efea;
+
+  --secondary-text-color: #7b7d7d
 }
 
 :root[color-scheme^='light'] {

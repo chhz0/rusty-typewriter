@@ -87,3 +87,61 @@ import * as params from '@params';
     enableUI(searchform)
   }
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const drawer = document.getElementById('search-drawer');
+  const searchButton = document.getElementById('search-drawer-button');
+  const overlay = document.getElementById('search-drawer-overlay');
+
+  // 显示/隐藏抽屉
+  overlay.addEventListener('click', toggleDrawer);
+
+  // 在toggleDrawer函数中添加覆盖层控制
+  function toggleDrawer() {
+    const drawer = document.getElementById('search-drawer');
+    const overlay = document.getElementById('search-drawer-overlay');
+
+    if (drawer.classList.contains('open')) {
+      drawer.classList.add('closing');
+      overlay.classList.remove('visible');
+      drawer.classList.remove('open');
+
+      setTimeout(() => {
+        drawer.classList.remove('closing');
+        drawer.classList.add('hidden');
+      }, 300);
+    } else {
+      drawer.classList.remove('hidden');
+      setTimeout(() => {
+        drawer.classList.add('open');
+        document.querySelector('.search-text').focus();
+      }, 10);
+    }
+  }
+
+  // 点击按钮触发
+  searchButton.addEventListener('click', toggleDrawer);
+
+  // 快捷键监听
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key === 'k') {
+      e.preventDefault();
+      toggleDrawer();
+    }
+  });
+
+  // 点击抽屉外部关闭
+  document.addEventListener('click', function (e) {
+    if (!drawer.contains(e.target) && e.target !== searchButton && drawer.classList.contains('open')) {
+      drawer.classList.add('closing');
+      overlay.classList.remove('visible');
+      drawer.classList.remove('open');
+
+      setTimeout(() => {
+        drawer.classList.remove('closing');
+        drawer.classList.add('hidden');
+        drawer.style.transform  = '';
+      }, 300);
+    }
+  });
+});
