@@ -1,3 +1,5 @@
+> In this fork project, I have made some modifications to rusty-typewriter based on my personal needs, including adding github svg to the header, adding blog_count and include shortcode support, modifying some styles, and making some text in date.rtwt support markdownify and safeHTML. You can view these changes on my [chhz0.github.io](https://chhz0.github.io). Of course, I strongly recommend that you use the original [Rusty-Typewriter](https://github.com/math-queiroz/rusty-typewriter) theme directly, it is excellent, so I expanded it to meet my needs.
+
 # Rusty Typewriter
 
 [![Hugo Version](https://img.shields.io/badge/hugo-0.121.0+-blue.svg)](https://github.com/gohugoio/hugo/releases)
