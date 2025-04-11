@@ -2,9 +2,9 @@
   <div class="nav-left">
     <a href="{{- absURL "" -}}" style="color: inherit;">{{- site.Title -}}</a>
   </div>
-  <div class="nav-center">
+  {{/*  <div class="nav-center">
     {{- partial "search_click_bar.html" -}}
-  </div>
+  </div>  */}}
   <div class="nav-right">
     <div id="nav-dropdown-menu" class="hidden" href="#">
       {{- partial "menu.html" (dict "menuID" "main" "page" .) -}}
@@ -24,17 +24,6 @@
       {{- partial "svg/github-light.svg" -}}
       {{- partial "svg/github-dark.svg" -}}
     </a>
-    <button id="search-drawer-button" class="hidden">
-      {{- partial "svg/search.svg" -}}
-    </button>
   </div>
 </div>
 
-<!-- 添加右侧抽屉 -->
-<div id="search-drawer-overlay" class="drawer-overlay"></div>
-<div id="search-drawer" class="drawer hidden">
-  <div class="drawer-content">
-    {{/*  {{ partial "search_bar.html" . }}  */}}
-    {{ partial "search_drawer.html" }}
-  </div>
-</div>

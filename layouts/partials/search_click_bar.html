@@ -6,6 +6,17 @@
   <span style="color: #7b7d7d;">/</span>
 </div>
 
+<button id="search-drawer-button" class="hidden">
+  {{- partial "svg/search.svg" -}}
+</button>
+
+<div id="search-drawer-overlay" class="drawer-overlay"></div>
+<div id="search-drawer" class="drawer hidden">
+  <div class="drawer-content">
+    {{ partial "search_drawer.html" }}
+  </div>
+</div>
+
 <script>
   function openSearchDrawer() {
     const drawer = document.getElementById('search-drawer');
